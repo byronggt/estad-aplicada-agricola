@@ -35,8 +35,19 @@ check_model(resultado1)
 # Prueba de Tukey para gallinaza
 Tukey_G<-HSD.test(peso, gallinaza, DFerror = 4, MSerror = 644);Tukey_G
 
+
 # Prueba múltiple de medias bajo el criterio de Scott Knott (pendiente)
 with(pdiv,PSUBDBC(gallinaza,urea,bloque,peso, ylab = "Peso"))
+
+# En caso se muestre problema con el Andeva de AgroR
+# Remove packages
+remove.packages("Matrix")
+remove.packages("lme4")
+
+# Install binaries explicitly
+install.packages("Matrix", type = "binary")
+install.packages("lme4", type = "binary")
+
 
 #=======
 data(tomate)
