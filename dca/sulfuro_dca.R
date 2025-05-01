@@ -15,6 +15,7 @@ mod<-lm(sulfuro~lab)
 sulfuros$predichos<-mod$fitted.values
 sulfuros$resid<-mod$residuals
 head(sulfuros)
+tail(sulfuros)
 anova(mod, test=F)
 win.graph(11,11)
 check_model(mod)
