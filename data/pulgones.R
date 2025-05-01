@@ -40,16 +40,3 @@ check_normality(resultado1)
 
 # Prueba múltiple de medias bajo el criterio de Scott Knott
 with(DICt,DIC(trat,logpulg,mcomp = "sk"))
-
-
-
-
-
-
-
-
-
-
-
-
-
