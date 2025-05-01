@@ -1,6 +1,10 @@
 # Dr. Byron González
 # http://byrong.cc
 
+# Detalles del experimento disponibles en la página 73
+# del libro de texto "Diseño y análisis de experimentos" de
+# López B. y González B. (2016) CETE, Facultad de Agronomía
+
 if(!require(data.table)){install.packages("data.table")}
 if(!require(performance)){install.packages("performance")}
 if(!require(car)){install.packages("car")}
