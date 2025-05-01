@@ -8,6 +8,7 @@
 if(!require(data.table)){install.packages("data.table")}
 if(!require(performance)){install.packages("performance")}
 if(!require(car)){install.packages("car")}
+if(!require(AgroR)){install.packages("AgroR")}
 
 DBA <- fread("https://archive.org/download/byrong_DBA1/DBA1.txt",header=T, sep="\t", dec=",")
 

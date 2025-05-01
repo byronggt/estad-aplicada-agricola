@@ -8,6 +8,7 @@
 if(!require(data.table)){install.packages("data.table")}
 if(!require(performance)){install.packages("performance")}
 if(!require(car)){install.packages("car")}
+if(!require(AgroR)){install.packages("AgroR")}
 
 DICt<- fread("https://archive.org/download/pulgones/pulgones.txt",header=T, sep="\t", dec=",")
 head(DICt)
