@@ -3,7 +3,6 @@
 
 if(!require(data.table)){install.packages("data.table")}
 if(!require(performance)){install.packages("performance")}
-if(!require(car)){install.packages("car")}
 
 dcl<- fread("https://archive.org/download/byrong_DCL/DCL.txt",header=T, sep="\t", dec=",")
 
