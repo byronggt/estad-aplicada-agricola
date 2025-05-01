@@ -12,7 +12,9 @@ plot(sulfuro~lab, col="green")
 resultado<-aov(sulfuro~lab)
 anova(resultado)
 mod<-lm(sulfuro~lab)
-mod$residuals
+sulfuros$predichos<-mod$fitted.values
+sulfuros$resid<-mod$residuals
+head(sulfuros)
 anova(mod, test=F)
 win.graph(11,11)
 check_model(mod)
