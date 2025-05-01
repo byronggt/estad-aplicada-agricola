@@ -48,7 +48,14 @@ remove.packages("lme4")
 install.packages("Matrix", type = "binary")
 install.packages("lme4", type = "binary")
 
+# Croquis de campo
+library(FielDHub)
+
 
 #=======
 data(tomate)
 with(tomate, PSUBDBC(parc, subp, bloco, resp, ylab="Dry mass (g)", mcomp = "sk"))
+
+# Croquis de campo
+library(FielDHub)
+run_app()

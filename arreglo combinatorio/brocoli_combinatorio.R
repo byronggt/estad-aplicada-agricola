@@ -32,3 +32,7 @@ check_model(resultado)
 
 # Prueba múltiple de medias bajo el criterio de Scott Knott
 with(fact,FAT2DBC(hibrido,distanciamiento,bloque,rendimiento,mcomp = "sk"))
+
+# Croquis de campo
+library(FielDHub)
+run_app()

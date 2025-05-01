@@ -43,5 +43,9 @@ par(mfrow = c(2,2))
 plot(resultado1)
 check_normality(resultado1)
 
+# Croquis de campo
+library(FielDHub)
+run_app()
+
 # Prueba múltiple de medias bajo el criterio de Scott Knott
 with(DICt,DIC(trat,logpulg,mcomp = "sk"))

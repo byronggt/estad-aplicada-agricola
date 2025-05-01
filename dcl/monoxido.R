@@ -30,3 +30,8 @@ check_model(resultado)
 
 # Prueba múltiple de medias bajo el criterio de Scott-Knott
 with(dcl,DQL(puntos,dia,hora,monoxido,mcomp = "sk"))
+
+# Croquis de campo
+library(FielDHub)
+run_app()
+

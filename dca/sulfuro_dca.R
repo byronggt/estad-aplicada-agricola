@@ -5,6 +5,7 @@ if(!require(readxl)){install.packages("readxl")}
 if(!require(agricolae)){install.packages("agricolae")}
 if(!require(performance)){install.packages("performance")}
 if(!require(AgroR)){install.packages("AgroR")}
+if(!require(FielDHub)){install.packages("FielDHub")}
 
 sulfuros<-read_excel("sulfuros.xlsx")
 head(sulfuros)
@@ -29,3 +30,7 @@ Tukey<-HSD.test(resultado,"laboratorio",console=T)
 
 # Prueba de Scott Knott
 with(sulfuros,DIC(laboratorio,sulfuro,mcomp = "sk"))
+
+# Croquis de campo
+library(FielDHub)
+run_app()

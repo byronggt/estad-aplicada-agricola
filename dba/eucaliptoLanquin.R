@@ -37,3 +37,8 @@ check_model(resultado)
 
 # Prueba de Scott Knott (propósitos ilustrativos)
 with(DBA,DBC(trat,bloque,altura,mcomp = "sk"))
+
+# Croquis de campo
+library(FielDHub)
+run_app()
+
