@@ -49,3 +49,4 @@ run_app()
 
 # Prueba múltiple de medias bajo el criterio de Scott Knott
 with(DICt,DIC(trat,logpulg,mcomp = "sk"))
+
