@@ -13,7 +13,7 @@ resultado<-aov(sulfuro~lab)
 anova(resultado)
 mod<-lm(sulfuro~lab)
 sulfuros$predichos<-mod$fitted.values
-sulfuros$resid<-mod$residuals
+sulfuros$resid<-residuals(mod, scientific=F)
 head(sulfuros)
 tail(sulfuros)
 anova(mod, test=F)
