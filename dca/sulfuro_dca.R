@@ -4,7 +4,8 @@
 if(!require(readxl)){install.packages("readxl")}
 if(!require(agricolae)){install.packages("agricolae")}
 if(!require(performance)){install.packages("performance")}
-if(!require(ScottKnott)){install.packages("ScottKnott")}
+if(!require(AgroR)){install.packages("AgroR")}
+
 sulfuros<-read_excel("sulfuros.xlsx")
 head(sulfuros)
 sulfuros$laboratorio<-factor(sulfuros$laboratorio)
@@ -26,7 +27,5 @@ check_normality(mod)
 #Prueba de Tukey
 Tukey<-HSD.test(resultado,"laboratorio",console=T)
 
-# Prueba de Scott Knott (revisar)
-sk <- SK(mod, dispersion = "se", sig.level = 0.05)
-sk
-
+# Prueba de Scott Knott
+with(sulfuros,DIC(laboratorio,sulfuro,mcomp = "sk"))
