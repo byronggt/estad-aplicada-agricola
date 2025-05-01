@@ -4,14 +4,16 @@
 if(!require(readxl)){install.packages("readxl")}
 if(!require(agricolae)){install.packages("agricolae")}
 if(!require(performance)){install.packages("performance")}
+if(!require(ScottKnott)){install.packages("ScottKnott")}
 sulfuros<-read_excel("sulfuros.xlsx")
 head(sulfuros)
-attach(sulfuros)
-lab<-factor(laboratorio)
-plot(sulfuro~lab, col="green")
-resultado<-aov(sulfuro~lab)
+sulfuros$laboratorio<-factor(sulfuros$laboratorio)
+sulfuros$sulfuro <- as.numeric(sulfuros$sulfuro) 
+str(sulfuros)
+plot(sulfuros$sulfuro~sulfuros$laboratorio, col="green")
+resultado<-aov(sulfuro~laboratorio, data = sulfuros)
 anova(resultado)
-mod<-lm(sulfuro~lab)
+mod<-lm(sulfuro~laboratorio, data = sulfuros)
 sulfuros$predichos<-mod$fitted.values
 sulfuros$resid<-residuals(mod, scientific=F)
 head(sulfuros)
@@ -22,4 +24,9 @@ check_model(mod)
 check_normality(mod)
 
 #Prueba de Tukey
-Tukey<-HSD.test(resultado,"lab",console=T)
+Tukey<-HSD.test(resultado,"laboratorio",console=T)
+
+# Prueba de Scott Knott (revisar)
+sk <- SK(mod, dispersion = "se", sig.level = 0.05)
+sk
+
