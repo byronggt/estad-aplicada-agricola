@@ -37,7 +37,7 @@ Tukey_G<-HSD.test(peso, gallinaza, DFerror = 4, MSerror = 644);Tukey_G
 
 
 # Prueba múltiple de medias bajo el criterio de Scott Knott (pendiente)
-with(pdiv,PSUBDBC(gallinaza,urea,bloque,peso, ylab = "Peso"))
+with(pdiv,PSUBDBC(gallinaza,urea,bloque,peso, ylab = "Peso", mcomp = "sk"))
 
 # En caso se muestre problema con el Andeva de AgroR
 # Remove packages
@@ -51,7 +51,4 @@ install.packages("lme4", type = "binary")
 
 #=======
 data(tomate)
-with(tomate, PSUBDBC(parc, subp, bloco, resp, ylab="Dry mass (g)"))
-
-
-
+with(tomate, PSUBDBC(parc, subp, bloco, resp, ylab="Dry mass (g)", mcomp = "sk"))
