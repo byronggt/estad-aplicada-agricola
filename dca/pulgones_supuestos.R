@@ -31,11 +31,11 @@ plot(resultado)
 check_normality(resultado)
 
 # Transformación de la variable original mediante la familia de Box-Cox
-summary(powerTransform(DICt$pulgones)) # Aplicar log
+summary(powerTransform(DICt$pulgones)) # Aplicar potencia 0.0424
 
 # Realizar el Andeva con la variable transformada
-logpulg<-log(pulg); logpulg
-resultado1<-lm(logpulg~trat)
+pulg_t<-pulg^0.0424; pulg_t
+resultado1<-lm(pulg_t~trat)
 anova(resultado1)
 
 # Revisión de supuestos con la variable transformada
@@ -48,5 +48,5 @@ library(FielDHub)
 run_app()
 
 # Prueba múltiple de medias bajo el criterio de Scott Knott
-with(DICt,DIC(trat,logpulg,mcomp = "sk"))
+with(DICt,DIC(trat,pulg_t,mcomp = "sk"))
 
