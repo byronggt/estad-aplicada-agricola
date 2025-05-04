@@ -34,7 +34,7 @@ check_normality(resultado)
 summary(powerTransform(DICt$pulgones)) # Aplicar log
 
 # Realizar el Andeva con la variable transformada
-logpulg<-log(pulg)
+logpulg<-log(pulg); logpulg
 resultado1<-lm(logpulg~trat)
 anova(resultado1)
 
