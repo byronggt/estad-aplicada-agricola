@@ -34,7 +34,7 @@ check_normality(resultado)
 summary(powerTransform(DICt$pulgones)) # Aplicar potencia 0.0424
 
 # Realizar el Andeva con la variable transformada
-pulg_t<-pulg^0.0424; pulg_t
+pulg_t<-(pulg^0.0424-1)/0.0424; pulg_t
 resultado1<-lm(pulg_t~trat)
 anova(resultado1)
 
@@ -49,4 +49,3 @@ run_app()
 
 # Prueba múltiple de medias bajo el criterio de Scott Knott
 with(DICt,DIC(trat,pulg_t,mcomp = "sk"))
-
