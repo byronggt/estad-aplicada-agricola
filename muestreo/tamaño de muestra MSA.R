@@ -26,7 +26,7 @@ precision=qnorm(0.025, lower.tail = F)*(sd(data_msa$punta)/sqrt(30));precision
 n_muestra <- sample.size.mean(e = 0.5, sd(data_msa$punta), N = Inf, level = 0.95)
 n_muestra
 
-# Completar muestra considerando los 30 iniciales
+# Completar la muestra considerando los 30 iniciales
 data_restante <- data[-muestra, ] # A la tabla original se resta 30
 muestra_complemento <- sample(1:nrow(data_restante),size=(n_muestra$n-30), replace=FALSE)
 muestra_definitiva<-rbind(data[muestra_complemento, ], data_msa)
