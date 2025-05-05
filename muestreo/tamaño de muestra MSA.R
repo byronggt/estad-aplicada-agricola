@@ -30,5 +30,6 @@ n_muestra
 data_restante <- data[-muestra, ] # A la tabla original se resta 30
 muestra_complemento <- sample(1:nrow(data_restante),size=(n_muestra$n-30), replace=FALSE)
 muestra_definitiva<-rbind(data[muestra_complemento, ], data_msa)
+print(muestra_definitiva, n=61)
 
 ic_mean<- MeanCI(x=muestra_definitiva$punta, trim = 0, conf.level = 0.95, na.rm = FALSE);ic_mean
