@@ -19,11 +19,11 @@ data_msa <- data[muestra, ]
 print(data_msa, n=30)
 
 # Calcular el valor de "e" 
-precision=qnorm(0.025, lower.tail = F)*(sd(data_msa$PUNTA)/sqrt(30));precision
+precision=qnorm(0.025, lower.tail = F)*(sd(data_msa$punta)/sqrt(30));precision
 
 # Calcular el tamaño de muestra para un e y sd
 # Aquí se ha seleccionado un e= 0.5
-n_muestra <- sample.size.mean(e = 0.5, sd(data_msa$PUNTA), N = Inf, level = 0.95)
+n_muestra <- sample.size.mean(e = 0.5, sd(data_msa$punta), N = Inf, level = 0.95)
 n_muestra
 
 # Completar muestra considerando los 30 iniciales
