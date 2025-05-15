@@ -1,6 +1,5 @@
 # Dr. Byron González
 # http://byrong.cc
-
 if(!require(readxl)){install.packages("readxl")}
 if(!require(agricolae)){install.packages("agricolae")}
 if(!require(performance)){install.packages("performance")}
@@ -9,6 +8,8 @@ if(!require(FielDHub)){install.packages("FielDHub")}
 
 sulfuros<-read_excel("sulfuros.xlsx")
 head(sulfuros)
+# Modelo matemático-estadístico:
+# sulfuros = media + laboratorio + error experimental 
 sulfuros$laboratorio<-factor(sulfuros$laboratorio)
 sulfuros$sulfuro <- as.numeric(sulfuros$sulfuro) 
 str(sulfuros)
