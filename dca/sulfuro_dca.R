@@ -22,9 +22,12 @@ sulfuros$resid<-residuals(mod, scientific=F)
 head(sulfuros)
 tail(sulfuros)
 anova(mod, test=F)
+par(mfrow = c(2,2))
+plot(mod)
+check_normality(mod)
+
 win.graph(11,11)
 check_model(mod)
-check_normality(mod)
 
 #Prueba de Tukey
 Tukey<-HSD.test(resultado,"laboratorio",console=T)
