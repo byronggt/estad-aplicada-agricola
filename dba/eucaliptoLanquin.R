@@ -23,7 +23,7 @@ plot(altura~trat, col="cyan")
 
 # Análisis de varianza para la altura de acuerdo
 # al modelo matemático-estadístico
-# altura = media + trat + error
+# altura = media + trat + bloque + error
 
 resultado<-lm(altura~trat+bloque)
 anova(resultado)
