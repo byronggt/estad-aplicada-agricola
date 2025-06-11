@@ -5,6 +5,8 @@ if(!require(data.table)){install.packages("data.table")}
 if(!require(performance)){install.packages("performance")}
 if(!require(Matrix)){install.packages("Matrix")}
 if(!require(AgroR)){install.packages("AgroR")}
+if(!require(agricolae)){install.packages("agricolae")}
+
 
 pdiv<- fread("https://archive.org/download/Gengibre/Gengibre.txt",header=T, sep="\t", dec=",")
 
@@ -36,7 +38,7 @@ check_model(resultado1)
 Tukey_G<-HSD.test(peso, gallinaza, DFerror = 4, MSerror = 644);Tukey_G
 
 
-# Prueba múltiple de medias bajo el criterio de Scott Knott (pendiente)
+# Prueba múltiple de medias bajo el criterio de Scott Knott
 with(pdiv,PSUBDBC(gallinaza,urea,bloque,peso, ylab = "Peso", mcomp = "sk"))
 
 # En caso se muestre problema con el Andeva de AgroR
