@@ -38,7 +38,7 @@ rownames(contrastes) <- c("Testigo vs otros", "Carbofuran vs Oxamyl",
 contrasts(nema$nematicida) <- contras <- t(contrastes)
 
 modelo_contrastes <- aov(nemvivos ~ nematicida + rep, data = nema)
-summary(modelo_contrastes, split = list(trat = list(
+summary(modelo_contrastes, split = list(nematicida = list(
   "Testigo vs otros" = 1,
   "Carbofuran vs Oxamyl" = 2,
   "OxamylF vs OxamylS" = 3,
@@ -50,7 +50,7 @@ summary(modelo_contrastes, split = list(trat = list(
 colnames(contrastes) <- levels(nema$nematicida)
 
 # Aplicar contrastes con glht()
-res_contrastes <- glht(modelo, linfct = mcp(trat = contrastes))
+res_contrastes <- glht(modelo, linfct = mcp(nematicida = contrastes))
 
 # Mostrar resumen con valores estimados de los contrastes (con signo)
 summary(res_contrastes)
