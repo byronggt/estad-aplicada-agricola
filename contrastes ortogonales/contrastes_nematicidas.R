@@ -22,7 +22,7 @@ summary(modelo)
 
 # Crear matriz de contrastes
 contrastes <- matrix(c(
-  5, -1, -1, -1, -1, -1,     # C1
+  -5, 1, 1, 1, 1, 1,     # C1
   0, 1, 1, 1, -4,  1,        # C2
   0, -1, 1, -1,  0,  1,      # C3
   0, -1, 0,  1,  0,  0,      # C4
