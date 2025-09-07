@@ -6,7 +6,7 @@ if(!require(performance)){install.packages("performance")}
 if(!require(Matrix)){install.packages("Matrix")}
 if(!require(AgroR)){install.packages("AgroR")}
 if(!require(agricolae)){install.packages("agricolae")}
-
+# Datos disponibles en http://biblioteca.usac.edu.gt/tesis/01/01_2087.pdf 
 
 pdiv<- fread("https://archive.org/download/Gengibre/Gengibre.txt",header=T, sep="\t", dec=",")
 
