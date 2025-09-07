@@ -52,7 +52,7 @@ install.packages("lme4", type = "binary")
 
 # Croquis de campo
 library(FielDHub)
-
+run_app()
 
 #=======
 data(tomate)
