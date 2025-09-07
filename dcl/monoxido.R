@@ -35,3 +35,7 @@ with(dcl,DQL(puntos,dia,hora,monoxido,mcomp = "sk"))
 library(FielDHub)
 run_app()
 
+media<-mean(monoxido); media
+desv.std<-sqrt(45.57333); desv.std
+cv<-desv.std/media*100
+cv
