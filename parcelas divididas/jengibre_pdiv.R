@@ -54,7 +54,7 @@ install.packages("lme4", type = "binary")
 library(FielDHub)
 run_app()
 
-#=======
+#==================================================================
 data(tomate)
 with(tomate, PSUBDBC(parc, subp, bloco, resp, ylab="Dry mass (g)", mcomp = "sk"))
 
