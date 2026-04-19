@@ -19,6 +19,7 @@ p1<-as.vector(Peso)
 peso<-as.numeric(p1)
 
 # Gráfico de la interacción
+windows(11,11)
 interaction.plot(gallinaza,urea,peso, fixed=T, xlab="Gallinaza", ylab="Peso",col = "blue")
 
 # Análisis de varianza para ambos factores
@@ -28,6 +29,7 @@ summary(resultado)
 # Revisión de los supuestos del modelo
 resultado1<-aov(peso~bloque+gallinaza*urea+bloque/gallinaza)
 
+win.graph(11,11)
 par(mfrow = c(2,2))
 plot(resultado1)
 check_normality(resultado1)
