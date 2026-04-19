@@ -19,6 +19,7 @@ pul<-as.vector(pulgones)
 pulg<-as.numeric(pul)
 
 # Diagramas de dispersión por tratamiento
+windows(10,10)
 plot(pulg~trat, col="orange")
 
 # Análisis de varianza
