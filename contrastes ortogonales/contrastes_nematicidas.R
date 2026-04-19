@@ -54,5 +54,3 @@ res_contrastes <- glht(modelo, linfct = mcp(nematicida = contrastes))
 
 # Mostrar resumen con valores estimados de los contrastes (con signo)
 summary(res_contrastes)
-
-==
