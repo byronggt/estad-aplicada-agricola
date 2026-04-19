@@ -7,7 +7,7 @@ if(!require(car)){install.packages("car")}
 if(!require(multcomp)){install.packages("multcomp")}
 
 # Importar archivo de Excel 
-nema <- read_excel("tabla_nematicidas.xlsx")
+nema <- read_excel("data/datatabla_nematicidas.xlsx")
 
 # Verificar el contenido
 head(nema)
