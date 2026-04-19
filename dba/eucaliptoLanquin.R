@@ -11,6 +11,7 @@ if(!require(car)){install.packages("car")}
 if(!require(AgroR)){install.packages("AgroR")}
 
 DBA <- fread("https://archive.org/download/byrong_DBA1/DBA1.txt",header=T, sep="\t", dec=",")
+head(DBA)
 
 attach(DBA)
 trat<-factor(Material)
@@ -19,6 +20,7 @@ alt<-as.vector(Altura)
 altura<-as.numeric(alt)
 
 # Diagramas de dispersión para la altura
+windows(10,10)
 plot(altura~trat, col="cyan")
 
 # Análisis de varianza para la altura de acuerdo
@@ -41,4 +43,3 @@ with(DBA,DBC(trat,bloque,altura,mcomp = "sk"))
 # Croquis de campo
 library(FielDHub)
 run_app()
-
