@@ -7,6 +7,7 @@ if(!require(AgroR)){install.packages("AgroR")}
 
 
 dcl<- fread("https://archive.org/download/byrong_DCL/DCL.txt",header=T, sep="\t", dec=",")
+head(dcl)
 
 attach(dcl)
 puntos<-factor(Puntos)
@@ -16,7 +17,8 @@ ppm1<-as.vector(ppm)
 monoxido<-as.numeric(ppm1)
 
 # Diagramas de dispersión para el monóxido
-plot(monoxido~puntos, col="gray")
+windows(10,10)
+plot(monoxido~puntos, col="orange")
 
 # Análisis de varianza para el monóxido
 resultado<-lm(monoxido~puntos+dia+hora)
