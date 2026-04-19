@@ -1,12 +1,13 @@
 # Dr. Byron González
 # http://byrong.cc
+
 if(!require(readxl)){install.packages("readxl")}
 if(!require(agricolae)){install.packages("agricolae")}
 if(!require(performance)){install.packages("performance")}
 if(!require(AgroR)){install.packages("AgroR")}
 if(!require(FielDHub)){install.packages("FielDHub")}
 
-sulfuros<-read_excel("sulfuros.xlsx")
+sulfuros<-read_excel("data/sulfuros.xlsx")
 head(sulfuros)
 # Modelo matemático-estadístico:
 # sulfuros = media + laboratorio + error experimental 
