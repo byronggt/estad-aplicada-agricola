@@ -7,7 +7,7 @@ if(!require(DescTools)){install.packages("DescTools")}
 if(!require(samplingbook)){install.packages("samplingbook")}
 
 #===============Muestreo simple aleatorio=======================================
-data<-read_excel("data_brix.xlsx")
+data<-read_excel("data/data_brix.xlsx")
 set.seed(123)
 head(data)
 colnames(data)
