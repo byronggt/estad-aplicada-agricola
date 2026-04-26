@@ -12,7 +12,7 @@ crear_croquis_dca <- function(tratamientos, repeticiones, nombre_archivo = "croq
   dis <- design.crd(tratamientos, r = repeticiones, serie = 2)
   df <- dis$book
   
-  # Creamos coordenadas ficticias para que desplot pueda dibujarlo como una cuadrícula
+  # Creamos coordenadas ficticias para que desplot dibuje una cuadrícula
   n_total <- nrow(df)
   columnas <- ceiling(sqrt(n_total))
   df$col <- rep(1:columnas, length.out = n_total)
