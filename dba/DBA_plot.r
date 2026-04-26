@@ -1,3 +1,6 @@
+# Dr. Byron González
+# http://byrong.cc   
+
 if(!require("agricolae")) install.packages("agricolae")
 if(!require("desplot")) install.packages("desplot")
 trt <- c("Control", "N50", "N100", "N150")
