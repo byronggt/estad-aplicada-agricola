@@ -42,34 +42,12 @@ crear_croquis_split<- function(factor_principal, factor_secundario, n_bloques, n
   col_factor_principal <- factor_cols[1]
   col_factor_secundario <- factor_cols[2]
   
-  # 5.5. Crear etiquetas reducidas pero identificables a partir de los nombres originales
-  crear_etiqueta_reducida <- function(nombres) {
-    sapply(nombres, function(nombre) {
-      if (nchar(nombre) <= 4) {
-        nombre
-      } else {
-        paste0(substr(nombre, 1, 3), ".")
-      }
-    }, USE.NAMES = FALSE)
-  }
-  
-  # Crear mapeos de etiquetas
-  etiq_principal <- crear_etiqueta_reducida(factor_principal)
-  etiq_secundario <- crear_etiqueta_reducida(gsub("Dosis_", "D", factor_secundario))
-  
-  # Crear diccionarios para reemplazar valores
-  mapeo_principal <- setNames(etiq_principal, factor_principal)
-  mapeo_secundario <- setNames(etiq_secundario, factor_secundario)
-  
-  # Aplicar los mapeos al dataframe
-  df[[col_factor_principal]] <- mapeo_principal[as.character(df[[col_factor_principal]])]
-  df[[col_factor_secundario]] <- mapeo_secundario[as.character(df[[col_factor_secundario]])]
-  
+  # Mantener los nombres completos de los niveles en el libro de campo
   # Renombrar las columnas a nombres fijos para desplot
   names(df)[names(df) == col_factor_principal] <- "principal"
   names(df)[names(df) == col_factor_secundario] <- "secundario"
-  df$principal <- factor(df$principal)
-  df$secundario <- factor(df$secundario)
+  df$principal <- factor(df$principal, levels = factor_principal)
+  df$secundario <- factor(df$secundario, levels = factor_secundario)
   
   # 6. Crear la visualización con énfasis en bordes
   p <- desplot(df, secundario ~ col + row,
