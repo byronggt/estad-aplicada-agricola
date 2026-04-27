@@ -55,7 +55,7 @@ crear_croquis_split<- function(factor_principal, factor_secundario, n_bloques, n
   
   # Crear mapeos de etiquetas
   etiq_principal <- crear_etiqueta_reducida(factor_principal)
-  etiq_secundario <- crear_etiqueta_reducida(gsub("PP_", "PP", factor_secundario))
+  etiq_secundario <- crear_etiqueta_reducida(gsub("Dosis_", "D", factor_secundario))
   
   # Crear diccionarios para reemplazar valores
   mapeo_principal <- setNames(etiq_principal, factor_principal)
