@@ -58,7 +58,7 @@ par(mfrow = c(1,1)) # Resetear layout
 grid.newpage()
 grid.text("Prueba de Normalidad de Residuos (Shapiro-Wilk)", y = 0.9, gp = gpar(fontsize = 14, fontface = "bold"))
 normality_check <- capture.output(check_normality(mod))
-# Usamos grid.text para posicionar el texto capturado de forma ordenada
+# Usar grid.text para posicionar el texto capturado de forma ordenada
 grid.text(paste(normality_check, collapse = "\n"), y = 0.5, just = "left", x = 0.1, 
           gp = gpar(fontfamily = "mono", fontsize = 10))
 
