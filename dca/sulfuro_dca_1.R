@@ -41,7 +41,7 @@ plot(sulfuros$sulfuro ~ sulfuros$laboratorio,
 # Página 2: Tabla ANOVA
 grid.newpage()
 grid.text("Tabla de Análisis de Varianza (ANOVA)", y = 0.9, gp = gpar(fontsize = 14, fontface = "bold"))
-# Usamos grid.table para un formato de tabla limpio
+# Usar grid.table para un formato de tabla limpio
 anova_table <- anova(resultado)
 grid.table(round(anova_table, 4), theme = ttheme_default(core = list(gp = gpar(fontsize = 10)),
                                                          colhead = list(gp = gpar(fontsize = 10, fontface = "bold")),
